@@ -12,6 +12,11 @@ public class AdminPageController {
         return "admin/dashboard";
     }
 
+    @GetMapping(value = "/dummy")
+    public String dummyPage() {
+        return "admin/dummy/dummy";
+    }
+
     @GetMapping("/user/add")
     public String addUser() {
         return "admin/user-add";
