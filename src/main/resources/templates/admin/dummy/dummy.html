@@ -5,6 +5,15 @@
 <head>
     <meta charset="UTF-8">
     <title>example adminlte</title>
+    <script>
+        $("form").on("submit", function(event) {
+            event.preventDefault();
+            // process form
+            console.log('test');
+            $('#payMethodSubmit').attr("action", "/admin/dummy/file/download")
+            $('#payMethodSubmit').submit();
+        });
+    </script>
 </head>
 <body>
 <div layout:fragment="content">
@@ -36,41 +45,29 @@
                     <!-- general form elements -->
                     <div class="card card-primary">
                         <div class="card-header">
-                            <h3 class="card-title">Quick Example</h3>
+                            <h3 class="card-title">PayMethod</h3>
                         </div>
                         <!-- /.card-header -->
                         <!-- form start -->
-                        <form role="form">
+                        <form role="form" id="payMethodSubmit" action="#" method="get">
                             <div class="card-body">
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">Email address</label>
-                                    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                                    <label for="payMethodId">id</label>
+                                    <input type="email" class="form-control" id="payMethodId" name="payMethodId" placeholder="Enter id">
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleInputPassword1">Password</label>
-                                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                                    <label for="payMethodCode">code</label>
+                                    <input type="email" class="form-control" id="payMethodCode" name="payMethodCode" placeholder="Enter code">
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleInputFile">File input</label>
-                                    <div class="input-group">
-                                        <div class="custom-file">
-                                            <input type="file" class="custom-file-input" id="exampleInputFile">
-                                            <label class="custom-file-label" for="exampleInputFile">Choose file</label>
-                                        </div>
-                                        <div class="input-group-append">
-                                            <span class="input-group-text" id="">Upload</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="form-check">
-                                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                                    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                                    <label for="payMethodName">name</label>
+                                    <input type="password" class="form-control" id="payMethodName" name="payMethodName" placeholder="Enter name">
                                 </div>
                             </div>
                             <!-- /.card-body -->
 
                             <div class="card-footer">
-                                <button type="submit" class="btn btn-primary">Submit</button>
+                                <button type="submit" class="btn btn-primary" id="corporation-submit">Submit</button>
                             </div>
                         </form>
                     </div>
